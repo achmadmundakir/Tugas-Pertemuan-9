@@ -1,4 +1,0 @@
-<project name="MultiBahasaApp" default="default" basedir=".">
-    <description>Builds, tests, and runs the project MultiBahasaApp.</description>
-    <import file="nbproject/build-impl.xml"/>
-</project>
