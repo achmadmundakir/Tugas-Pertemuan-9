@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FC341E03-35F4-5A0D-E82B-8B73CD5893AB" name="pengguna">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:05:07 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_pengguna" id="D31C7177-0BC2-7872-900F-D38E3A80B584">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:05:18 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nama" id="C5D93CEB-F964-C2E8-9BA4-8589975D0AFA">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:06:28 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="0FB88432-377B-9F89-07D2-3027198C3E83">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:08:18 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tanggal_daftar" id="D5E571B6-ECBA-2904-B7FD-8BFA0E999FA9">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:08:28 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C1" id="7A548F68-D6AF-9955-7A63-50689734C38F">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:14:51 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C2" id="B9194259-8431-FD9D-0E54-4FBDB535A2C7">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:15:05 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C3" id="4021CD9F-27C0-2D88-5C3D-031B1B294475">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:15:17 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C4" id="566BF27F-97D6-A2B5-2909-093CBC21760F">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:15:27 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="C5" id="3E50EF4C-CF48-FFC3-9B73-DB5E7C734C6F">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:15:48 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BAB8657E-394E-6CD5-AE60-7A3A2E2268C2" name="pengguna PK">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 04:06:25 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D31C7177-0BC2-7872-900F-D38E3A80B584</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

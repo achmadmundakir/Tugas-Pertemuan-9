@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="uassbd4" id="7080A587-4781-CEE7-1DAD-0F45185CC96D" version="3.5">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-07 03:56:00 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7080A587-4781-CEE7-1DAD-0F45185CC96D</designId>
+</OSDM_Design>
