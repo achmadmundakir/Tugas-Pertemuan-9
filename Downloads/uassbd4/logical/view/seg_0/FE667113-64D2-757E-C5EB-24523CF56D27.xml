@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<EntityView class="oracle.dbtools.crest.model.design.logical.EntityView" directorySegmentName="seg_0" id="FE667113-64D2-757E-C5EB-24523CF56D27" name="V_SAW_HASIL">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:17:32 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<userDefined>true</userDefined>
+<userDefinedSQL><![CDATA[CREATE OR REPLACE FORCE EDITIONABLE VIEW "V_SAW_HASIL" ("ID_SOFTWARE", "NAMA_SOFTWARE", "PEREFERENSI", "NILAI_SAW") AS 
+  SELECT 
+    sn.ID_software,
+    sn.nama AS nama_software,
+    sn.ID_pereferensi AS pereferensi,  
+    ROUND(
+        (sn.n1 * p.w1) +
+        (sn.n2 * p.w2) +
+        (sn.n3 * p.w3) +
+        (sn.n4 * p.w4) +
+        (sn.n5 * p.w5) , 10
+    ) AS nilai_saw
+FROM v_saw_normalisasi sn 
+INNER JOIN pereferensi p ON p.ID.pereferensi = sn.ID.pereferensi
+ORDER BY sn.ID_software, sn.ID_pereferensi;]]></userDefinedSQL>
+<parsed>true</parsed>
+<viewType>EntityView</viewType>
+<usedContainers>
+<container alias="sn" containerID="048035A4-9DFC-F79C-3EC9-CB194BE830E4"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="ID_software" id="92067A41-9C35-109A-2B8F-C3CE2649450E">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:23:24 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<dataType>INTEGER</dataType>
+<reference>false</reference>
+<referencedColumn>90FE896F-E684-5D07-6211-6001F8968318</referencedColumn>
+<referencedColumnViewID>15754D89-394C-71AF-991C-1B0A6A095033</referencedColumnViewID>
+<tableAlias>sn</tableAlias>
+<viewID>048035A4-9DFC-F79C-3EC9-CB194BE830E4</viewID>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="nama_software" id="90882175-CF02-B5B9-7E80-4162D1F204E2">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:27:06 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>nama_software</alias>
+<dataType>UNKNOWN</dataType>
+<reference>false</reference>
+<referencedColumnViewID>649B9FBA-A59E-2A75-6E07-29B0B4121827</referencedColumnViewID>
+<tableAlias>sn</tableAlias>
+<viewID>048035A4-9DFC-F79C-3EC9-CB194BE830E4</viewID>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="pereferensi" id="C03A48A7-7D18-F85B-FAD4-361A6D899406">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:27:06 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>pereferensi</alias>
+<dataType>INTEGER</dataType>
+<reference>false</reference>
+<referencedColumn>3FB4CC76-FFCE-31CD-96FD-F6B66AB16B27</referencedColumn>
+<referencedColumnViewID>025DB713-E582-6560-7B55-09F075A96392</referencedColumnViewID>
+<tableAlias>sn</tableAlias>
+<viewID>048035A4-9DFC-F79C-3EC9-CB194BE830E4</viewID>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="nilai_saw" id="FAA29AC2-772C-2B77-7777-0EAD7FE5889C">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:23:24 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>nilai_saw</alias>
+<dataType>NUMBER</dataType>
+<expression>Round((sn.n1 * p.W1) + (sn.n2 * p.W2) + (sn.n3 * p.W3) + (sn.n4 * p.W4) + (sn.n5 * p.W5), 10)</expression>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="048035A4-9DFC-F79C-3EC9-CB194BE830E4">
+<container>true</container>
+<tableName>V_SAW_NORMALISASI</tableName>
+<view>true</view>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="FC341E03-35F4-5A0D-E82B-8B73CD5893AB">
+<container>true</container>
+<tableName>pereferensi</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="15754D89-394C-71AF-991C-1B0A6A095033">
+<columnName>ID_software</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="649B9FBA-A59E-2A75-6E07-29B0B4121827">
+<columnName>nama</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="025DB713-E582-6560-7B55-09F075A96392">
+<columnName>ID_pereferensi</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="7C815A6F-23DC-CFFA-E846-38E3F988DC80">
+<columnName>n1</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="7A548F68-D6AF-9955-7A63-50689734C38F">
+<columnName>W1</columnName>
+<tableName>pereferensi</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="97E5F0BC-A758-5734-38DE-D979451AC34C">
+<columnName>n2</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="B9194259-8431-FD9D-0E54-4FBDB535A2C7">
+<columnName>W2</columnName>
+<tableName>pereferensi</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="6E8D926B-7735-ED32-B244-3E2691A344FD">
+<columnName>n3</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="4021CD9F-27C0-2D88-5C3D-031B1B294475">
+<columnName>W3</columnName>
+<tableName>pereferensi</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="AD0E89F9-A0C8-A956-724A-4C3D248D7539">
+<columnName>n4</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="566BF27F-97D6-A2B5-2909-093CBC21760F">
+<columnName>W4</columnName>
+<tableName>pereferensi</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="B3374A2D-F7DB-4C28-ED4D-8D572C07F822">
+<columnName>n5</columnName>
+<tableName>V_SAW_NORMALISASI</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3E50EF4C-CF48-FFC3-9B73-DB5E7C734C6F">
+<columnName>W5</columnName>
+<tableName>pereferensi</tableName>
+</UsedObject>
+</usedObjects>
+</EntityView>

@@ -14,13 +14,36 @@
 <display>false</display>
 <notation>1</notation>
 <objectViews>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntityView" oid="048035A4-9DFC-F79C-3EC9-CB194BE830E4" otype="EntityView" vid="F688759C-3D34-822F-AE75-64827F3FAFBF">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="320" y="265" width="174" height="220"/>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="43CAEA58-1758-EE63-7ACD-88C94E732910" otype="Entity" vid="E9B26112-A55C-F7D2-7791-77EF07A2ACEB">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="293" y="97" width="166" height="234"/>
+<bounds x="77" y="55" width="166" height="146"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntityView" oid="59181087-B62A-67A8-A7BE-B570BBE09863" otype="EntityView" vid="363E080D-AADE-254A-38FB-8661825BF05B">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="87" y="243" width="194" height="223"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="FC341E03-35F4-5A0D-E82B-8B73CD5893AB" otype="Entity" vid="C66DC7A2-E6B5-EC48-F989-C01E550A2C82">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="77" y="93" width="166" height="234"/>
+<bounds x="289" y="59" width="166" height="137"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntityView" oid="FE667113-64D2-757E-C5EB-24523CF56D27" otype="EntityView" vid="56B62F25-5FD8-F356-2307-CB60B34AC312">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="535" y="273" width="170" height="110"/>
 </OView>
 </objectViews>
+<connectors>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="3DD79B84-2D78-3610-F405-4B6AA7431403" otype="Relation" vid_source="C66DC7A2-E6B5-EC48-F989-C01E550A2C82" vid_target="E9B26112-A55C-F7D2-7791-77EF07A2ACEB">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="289" y="112"/>
+<point x="243" y="112"/>
+</points>
+</Connector>
+</connectors>
 </Diagram>

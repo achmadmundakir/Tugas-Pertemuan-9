@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<EntityView class="oracle.dbtools.crest.model.design.logical.EntityView" directorySegmentName="seg_0" id="59181087-B62A-67A8-A7BE-B570BBE09863" name="V_SAW_MIN_MAX">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 06:56:51 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<userDefined>true</userDefined>
+<userDefinedSQL><![CDATA[CREATE OR REPLACE FORCE EDITIONABLE VIEW "V_SAW_MIN_MAX" ("M1", "M2", "M3", "M4", "M5") AS 
+  SELECT
+    MAX(kemudahan_pengguna) AS m1,
+    MAX(fitur_editing) AS m2,
+    MAX(kompatibilitas_OS) AS m3,
+    MIN(biaya_lisensi) AS m4,
+    MAX(kecepatan_rendering) AS m5
+FROM software cm
+GROUP BY ID_preferensensi;]]></userDefinedSQL>
+<parsed>true</parsed>
+<viewType>EntityView</viewType>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="m1" id="B2BFD875-4E82-192B-D8E8-08902616BA28">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:04:04 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>m1</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Max(cm.kemudahan_pengguna)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="m2" id="1CB4101D-293C-3CFE-31DD-94B9F3F99399">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:04:04 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>m2</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Max(cm.fitur_editing)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="m3" id="38F32E38-FF8E-ED20-AA4C-9D926E7BDE8D">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:04:04 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>m3</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Max(cm.kompatibilitas_OS)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="m4" id="368E5718-0002-3A3E-5C18-09F9AC3A12CB">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:04:04 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>m4</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Min(cm.biaya_lisensi)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="m5" id="A03D3F1D-0D6D-1FBB-BC05-8E4F1A91C3BA">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:04:04 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>m5</alias>
+<dataType>UNKNOWN</dataType>
+<expression>Max(kecepatan_rendering)</expression>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="43CAEA58-1758-EE63-7ACD-88C94E732910">
+<container>true</container>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="C9C74422-C078-3A5A-6B8C-BBAC245667FE">
+<columnName>kemudahan_pengguna</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3F8DFBEC-85BC-F7CB-D045-95573EF0B9BA">
+<columnName>fitur_editing</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="9685C1E3-5114-CE96-A2B4-2831C2A258D7">
+<columnName>kompatibilitas_OS</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E88C4F99-0C5E-1F0B-204B-B549E92E60E1">
+<columnName>biaya_lisensi</columnName>
+<tableName>software</tableName>
+</UsedObject>
+</usedObjects>
+</EntityView>

@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-5">Dashboard Penilaian</h1>
+    <p class="lead text-muted">Atur data dan berikan penilaian Anda untuk mendapatkan rekomendasi terbaik.</p>
+</div>
+<div class="row g-4">
+    <div class="col-lg-5 d-flex flex-column gap-4">
+        <div class="card-dashboard">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Data Kriteria</h5>
+                <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalTambahKriteria">
+                    <i class="bi bi-plus-lg"></i> Tambah
+                </button>
+            </div>
+            <div class="card-body">
+                <table class="table table-dashboard align-middle">
+                    <tbody>
+                        {% for k in kriterias %}
+                        <tr>
+                            <td>{{ k.nama }}</td>
+                            <td><span class="badge text-bg-secondary">{{ k.bobot }}</span></td>
+                            <td><span class="badge bg-{{ 'info' if k.jenis == 'benefit' else 'warning' }}">{{ k.jenis }}</span></td>
+                            <td><a href="{{ url_for('hapus_kriteria', id=k.id) }}" class="btn-delete" title="Hapus">×</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-dashboard">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Data Alternatif (Software)</h5>
+                <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalTambahAlternatif">
+                    <i class="bi bi-plus-lg"></i> Tambah
+                </button>
+            </div>
+            <div class="card-body">
+                <table class="table table-dashboard align-middle">
+                     <tbody>
+                        {% for a in alternatifs %}
+                        <tr>
+                            <td>
+                                <strong>{{ a.nama }}</strong>
+                                <small class="d-block text-muted">{{ a.deskripsi }}</small>
+                            </td>
+                            <td><a href="{{ url_for('hapus_alternatif', id=a.id) }}" class="btn-delete" title="Hapus">×</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <div class="card-dashboard h-100">
+            <div class="card-header"><h5 class="mb-0">Matriks Keputusan</h5></div>
+            <div class="card-body">
+                <p class="text-muted small">Isi nilai untuk setiap software berdasarkan kriteria (cth: skala 1-100 atau desimal).</p>
+                <form action="{{ url_for('simpan_nilai') }}" method="post">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center align-middle">
+                            <thead>
+                                <tr>
+                                    <th class="text-start">Alternatif \ Kriteria</th>
+                                    {% for k in kriterias %}<th>{{ k.nama }}</th>{% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for a in alternatifs %}
+                                <tr>
+                                    <th class="text-start">{{ a.nama }}</th>
+                                    {% for k in kriterias %}
+                                    <td>
+                                        <input type="text" inputmode="decimal" name="nilai-{{ a.id }}-{{ k.id }}" class="form-control form-control-sm text-center" value="{{ nilai_dict.get((a.id, k.id), '') }}" placeholder="0.0" required>
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-end mt-4">
+                        <button type="submit" class="btn btn-gradient">
+                            <i class="bi bi-save-fill me-2"></i>Simpan Semua Nilai
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Tambah Kriteria -->
+<div class="modal fade" id="modalTambahKriteria" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Tambah Kriteria Baru</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <form action="{{ url_for('tambah_kriteria') }}" method="post">
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label">Nama Kriteria</label><input type="text" name="nama" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Bobot (contoh: 0.3)</label><input type="text" inputmode="decimal" name="bobot" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Jenis Kriteria</label><select name="jenis" class="form-select" required><option value="benefit">Benefit</option><option value="cost">Cost</option></select></div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button><button type="submit" class="btn btn-primary">Simpan Kriteria</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal Tambah Alternatif -->
+<div class="modal fade" id="modalTambahAlternatif" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Tambah Alternatif Baru</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <form action="{{ url_for('tambah_alternatif') }}" method="post">
+          <div class="modal-body">
+            <div class="mb-3"><label class="form-label">Nama Software</label><input type="text" name="nama" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Deskripsi Singkat</label><input type="text" name="deskripsi" class="form-control"></div>
+          </div>
+          <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button><button type="submit" class="btn btn-primary">Simpan Alternatif</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

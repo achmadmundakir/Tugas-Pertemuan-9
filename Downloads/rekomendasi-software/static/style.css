@@ -1,0 +1,51 @@
+:root { --bg-deep: #161b22; --bg-surface: #21262d; --border-color: #30363d; --primary-gradient: linear-gradient(45deg, #4f46e5, #c026d3); --primary-gradient-hover: linear-gradient(45deg, #6366f1, #d946ef); --text-primary: #e6edf3; --text-secondary: #8b949e; --font-family: 'Poppins', sans-serif; --success: #16a34a; --warning: #facc15; --danger: #ef4444; }
+html { scroll-behavior: smooth; }
+body { background-color: var(--bg-deep); color: var(--text-primary); font-family: var(--font-family); min-height: 100vh; display: flex; flex-direction: column; }
+.main-background { background-image: radial-gradient(circle at 1px 1px, var(--border-color) 1px, transparent 0); background-size: 25px 25px; flex-grow: 1; }
+.navbar { background-color: rgba(22, 27, 34, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+.navbar-brand { font-weight: 600; color: var(--text-primary); }
+.navbar-brand:hover { color: var(--text-primary); }
+.navbar-brand .bi-magic { color: #c026d3; }
+.nav-link-custom { color: var(--text-secondary); text-decoration: none; font-weight: 400; transition: color 0.2s ease; }
+.nav-link-custom:hover { color: white; }
+footer { background-color: var(--bg-deep); border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; }
+.card-dashboard { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); }
+.card-header { background-color: transparent; border-bottom: 1px solid var(--border-color); }
+.modal-content { background-color: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-color); }
+.modal-header, .modal-footer { border-color: var(--border-color); }
+.btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+.table-dashboard { margin-bottom: 0; }
+.table-dashboard tr:last-child td, .table-dashboard tr:last-child th { border-bottom: 0; }
+.table > :not(caption) > * > * { border-bottom-width: 1px; border-color: var(--border-color); }
+thead th { color: var(--text-secondary); font-weight: 400; text-transform: uppercase; font-size: 0.8em; }
+.form-control, .form-select { background-color: var(--bg-deep); color: var(--text-primary); border-color: var(--border-color); }
+.form-control::placeholder { color: var(--text-secondary); }
+.form-control:focus, .form-select:focus { background-color: var(--bg-deep); color: var(--text-primary); border-color: #4f46e5; box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25); }
+.btn { border-radius: 8px; font-weight: 600; transition: all 0.2s ease; }
+.btn-primary { background-color: #4f46e5; border-color: #4f46e5; }
+.btn-gradient { background: var(--primary-gradient); color: white; border: none; padding: 0.75rem 1.5rem; }
+.btn-gradient:hover { background: var(--primary-gradient-hover); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(192, 38, 211, 0.3); }
+.btn-delete { color: var(--text-secondary); font-weight: bold; text-decoration: none; font-size: 1.5rem; line-height: 1; }
+.btn-delete:hover { color: var(--danger); }
+.badge.bg-info { background-color: var(--success) !important; }
+.badge.bg-warning { background-color: var(--warning) !important; color: #161b22 !important; }
+.hasil-container { display: grid; gap: 1rem; }
+.card-hasil-juara { background: var(--primary-gradient); color: white; border-radius: 12px; padding: 2rem; display: flex; align-items: center; gap: 1.5rem; box-shadow: 0 10px 30px rgba(192, 38, 211, 0.4); }
+.juara-icon { font-size: 3rem; }
+.juara-content { flex-grow: 1; }
+.juara-label { font-size: 0.8rem; font-weight: bold; text-transform: uppercase; opacity: 0.8; }
+.juara-title { font-size: 2rem; font-weight: 700; margin: 0; }
+.juara-deskripsi { opacity: 0.9; }
+.juara-nilai { text-align: right; }
+.juara-nilai span { display: block; font-size: 0.9rem; opacity: 0.8; }
+.juara-nilai strong { font-size: 2rem; font-weight: 700; }
+.card-hasil-lainnya { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; transition: all 0.2s ease; }
+.card-hasil-lainnya:hover { transform: translateY(-3px); border-color: var(--text-secondary); }
+.peringkat-badge { font-size: 1.5rem; font-weight: 700; color: var(--text-secondary); }
+.lainnya-content { flex-grow: 1; }
+.lainnya-title { margin-bottom: 0.1rem; color: var(--text-primary); }
+.lainnya-deskripsi { font-size: 0.9rem; color: var(--text-secondary); }
+.lainnya-nilai strong { font-size: 1.2rem; color: var(--text-primary); font-weight: 600; }
+.alert { border: none; color: white; }
+.alert-success { background-color: var(--success); }
+.alert-warning { background-color: var(--warning); color: black; }

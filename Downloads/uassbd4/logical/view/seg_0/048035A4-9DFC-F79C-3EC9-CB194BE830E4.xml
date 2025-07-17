@@ -1,0 +1,182 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<EntityView class="oracle.dbtools.crest.model.design.logical.EntityView" directorySegmentName="seg_0" id="048035A4-9DFC-F79C-3EC9-CB194BE830E4" name="V_SAW_NORMALISASI">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:05:41 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<userDefined>true</userDefined>
+<userDefinedSQL><![CDATA[CREATE OR REPLACE FORCE EDITIONABLE VIEW "V_SAW_NORMALISASI" ("ID_SOFTWARE", "ID_PEREFERENSI", "N1", "N2", "N3", "N4", "N5") AS 
+  SELECT 
+    cm.ID_software AS ID_software,
+    cm.ID_pereferensi AS ID_pereferensi,
+    ROUND(cm.kemudahan_pengguna/ mm.m1, 10) AS n1,
+    ROUND(cm.fitur_editing     / mm.m2, 10) AS n2,
+    ROUND(cm.kompatibilitas    / mm.m3, 10) AS n3, 
+    ROUND(cm.biaya_lisensi     / mm.m4, 10) AS n4,
+    ROUND(cm.kecepatan_rendering/ mm.m5, 10) AS n5
+    
+FROM software cm
+INNER JOIN v_saw_min_max mm ON 1 = 1;]]></userDefinedSQL>
+<parsed>true</parsed>
+<viewType>EntityView</viewType>
+<usedContainers>
+<container alias="cm" containerID="43CAEA58-1758-EE63-7ACD-88C94E732910"/>
+</usedContainers>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="ID_software" id="15754D89-394C-71AF-991C-1B0A6A095033">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:16:35 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ID_software</alias>
+<dataType>INTEGER</dataType>
+<reference>false</reference>
+<referencedColumn>90FE896F-E684-5D07-6211-6001F8968318</referencedColumn>
+<table>43CAEA58-1758-EE63-7ACD-88C94E732910</table>
+<tableAlias>cm</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="ID_pereferensi" id="025DB713-E582-6560-7B55-09F075A96392">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:16:35 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ID_pereferensi</alias>
+<dataType>INTEGER</dataType>
+<reference>false</reference>
+<referencedColumn>3FB4CC76-FFCE-31CD-96FD-F6B66AB16B27</referencedColumn>
+<table>43CAEA58-1758-EE63-7ACD-88C94E732910</table>
+<tableAlias>cm</tableAlias>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n1" id="7C815A6F-23DC-CFFA-E846-38E3F988DC80">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:16:35 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n1</alias>
+<dataType>NUMBER</dataType>
+<expression>Round(cm.kemudahan_pengguna / mm.m1, 10)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n2" id="97E5F0BC-A758-5734-38DE-D979451AC34C">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:16:35 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n2</alias>
+<dataType>NUMBER</dataType>
+<expression>Round(cm.fitur_editing / mm.m2, 10)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n3" id="6E8D926B-7735-ED32-B244-3E2691A344FD">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:16:35 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n3</alias>
+<dataType>NUMBER</dataType>
+<expression>Round(cm.kompatibilitas / mm.m3, 10)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n4" id="AD0E89F9-A0C8-A956-724A-4C3D248D7539">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:16:35 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n4</alias>
+<dataType>NUMBER</dataType>
+<expression>Round(cm.biaya_lisensi / mm.m4, 10)</expression>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.logical.AttributeView" name="n5" id="B3374A2D-F7DB-4C28-ED4D-8D572C07F822">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-09 07:16:35 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>n5</alias>
+<dataType>NUMBER</dataType>
+<expression>Round(cm.kecepatan_rendering / mm.m5, 10)</expression>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="43CAEA58-1758-EE63-7ACD-88C94E732910">
+<container>true</container>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="59181087-B62A-67A8-A7BE-B570BBE09863">
+<container>true</container>
+<tableName>V_SAW_MIN_MAX</tableName>
+<view>true</view>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="90FE896F-E684-5D07-6211-6001F8968318">
+<columnName>ID_software</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3FB4CC76-FFCE-31CD-96FD-F6B66AB16B27">
+<columnName>ID_pereferensi</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="C9C74422-C078-3A5A-6B8C-BBAC245667FE">
+<columnName>kemudahan_pengguna</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="B2BFD875-4E82-192B-D8E8-08902616BA28">
+<columnName>m1</columnName>
+<tableName>V_SAW_MIN_MAX</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3F8DFBEC-85BC-F7CB-D045-95573EF0B9BA">
+<columnName>fitur_editing</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="1CB4101D-293C-3CFE-31DD-94B9F3F99399">
+<columnName>m2</columnName>
+<tableName>V_SAW_MIN_MAX</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="38F32E38-FF8E-ED20-AA4C-9D926E7BDE8D">
+<columnName>m3</columnName>
+<tableName>V_SAW_MIN_MAX</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E88C4F99-0C5E-1F0B-204B-B549E92E60E1">
+<columnName>biaya_lisensi</columnName>
+<tableName>software</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="368E5718-0002-3A3E-5C18-09F9AC3A12CB">
+<columnName>m4</columnName>
+<tableName>V_SAW_MIN_MAX</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="A03D3F1D-0D6D-1FBB-BC05-8E4F1A91C3BA">
+<columnName>m5</columnName>
+<tableName>V_SAW_MIN_MAX</tableName>
+</UsedObject>
+</usedObjects>
+</EntityView>

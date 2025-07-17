@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Hasil Rekomendasi{% endblock %}
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-5">Rekomendasi Software Terbaik</h1>
+    <p class="lead text-muted">Berdasarkan perhitungan metode SAW, inilah urutan software yang paling sesuai untuk Anda.</p>
+</div>
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="hasil-container">
+            {% if hasil and hasil[0].nilai > 0 %}
+                {% for item in hasil %}
+                    {% if loop.index == 1 %}
+                        <div class="card-hasil-juara">
+                            <div class="juara-icon"><i class="bi bi-trophy-fill"></i></div>
+                            <div class="juara-content"><span class="juara-label">Rekomendasi Utama</span><h3 class="juara-title">{{ item.alternatif.nama }}</h3><p class="juara-deskripsi">{{ item.alternatif.deskripsi }}</p></div>
+                            <div class="juara-nilai"><span>Nilai Akhir</span><strong>{{ "%.4f"|format(item.nilai) }}</strong></div>
+                        </div>
+                    {% else %}
+                        <div class="card-hasil-lainnya">
+                            <div class="peringkat-badge">#{{ loop.index }}</div>
+                            <div class="lainnya-content"><h5 class="lainnya-title">{{ item.alternatif.nama }}</h5><p class="lainnya-deskripsi">{{ item.alternatif.deskripsi }}</p></div>
+                            <div class="lainnya-nilai"><strong>{{ "%.4f"|format(item.nilai) }}</strong></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-warning text-center"><h4 class="alert-heading">Data Belum Lengkap!</h4><p>Silakan kembali ke dashboard dan isi nilai pada Matriks Keputusan untuk melihat hasil rekomendasi.</p></div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="text-center mt-5">
+     <a href="{{ url_for('index') }}" class="btn btn-outline-light">« Kembali ke Dashboard</a>
+</div>
+{% endblock %}

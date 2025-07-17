@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="43CAEA58-1758-EE63-7ACD-88C94E732910" name="software">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7743EDE5-7983-B280-37DF-FA4E791CB2A0" name="penilaian">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
@@ -15,21 +15,21 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_software" id="90FE896F-E684-5D07-6211-6001F8968318">
+<Attribute name="ID_penilaian" id="CE68DD6E-D829-89BB-7A6D-0BA38F050AF9">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="kemudahan_pengguna" id="C9C74422-C078-3A5A-6B8C-BBAC245667FE">
+<Attribute name="ID_software" id="E3B02B5C-C95B-743D-01E6-2864CBA22D08">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
@@ -37,37 +37,24 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nilai_c1" id="58FAE433-1C1F-35E7-475F-016D72E3691F">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fitur_editing" id="3F8DFBEC-85BC-F7CB-D045-95573EF0B9BA">
+<Attribute name="nilai_c2" id="353F6AFC-296A-C0BD-D57F-6426F51779A2">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
-<ownerDesignName>uassbd4</ownerDesignName>
-<engineerTo>
-<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="kompatibilitas_OS" id="9685C1E3-5114-CE96-A2B4-2831C2A258D7">
-<createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
-<ownerDesignName>uassbd4</ownerDesignName>
-<engineerTo>
-<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="biaya_lisensi" id="E88C4F99-0C5E-1F0B-204B-B549E92E60E1">
-<createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
@@ -77,22 +64,9 @@
 <logicalDatatype>LOGDT025</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="keecepatan_rendering" id="0A2D27C0-2B82-D562-529E-5761CBE2B056">
+<Attribute name="nilai_c3" id="30B81F81-E0E4-6AFB-19E0-7235A6240A5F">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
-<ownerDesignName>uassbd4</ownerDesignName>
-<engineerTo>
-<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="url_download" id="2B0A8449-28AF-34F9-323A-98A3EC12D08A">
-<createdBy>ginhitam</createdBy>
-<createdTime>2025-07-08 07:13:44 UTC</createdTime>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
@@ -102,9 +76,9 @@
 <logicalDatatype>LOGDT025</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nama_software" id="4F13CA2D-4D27-BF4C-3263-3F27445A20F2">
+<Attribute name="nilai_c4" id="ECFF89AF-9DF3-1CBF-5493-DE98F8BC800A">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-09 07:23:39 UTC</createdTime>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
@@ -114,32 +88,44 @@
 <logicalDatatype>LOGDT025</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_pereferensi" id="3FB4CC76-FFCE-31CD-96FD-F6B66AB16B27">
+<Attribute name="niali_c5" id="770B4EFE-681A-79BA-F033-95EFD164B311">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-09 07:37:53 UTC</createdTime>
-<generatorID>3DD79B84-2D78-3610-F405-4B6AA7431403</generatorID>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
 </engineerTo>
-<referedAttribute>D31C7177-0BC2-7872-900F-D38E3A80B584</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_software1" id="C1421829-8BFC-6308-3B9C-6C39677C997B">
+<createdBy>ginhitam</createdBy>
+<createdTime>2025-07-08 03:05:08 UTC</createdTime>
+<generatorID>8F5A9EBA-4F77-E32D-CE25-1BEF795EB30D</generatorID>
+<ownerDesignName>uassbd4</ownerDesignName>
+<engineerTo>
+<item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
+</engineerTo>
+<referedAttribute>90FE896F-E684-5D07-6211-6001F8968318</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="8090A14D-0D1F-504B-A7C8-214C6EA4ED9C" name="pengguna PK">
+<identifier id="98D254CB-6471-509A-E010-50CE7F7120BF" name="pengguna PK">
 <createdBy>ginhitam</createdBy>
-<createdTime>2025-07-07 04:16:23 UTC</createdTime>
+<createdTime>2025-07-08 02:40:51 UTC</createdTime>
 <ownerDesignName>uassbd4</ownerDesignName>
 <engineerTo>
 <item key="6AB6F7CA-B0A7-8EC4-5F40-B308B7A81A15" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>90FE896F-E684-5D07-6211-6001F8968318</attributeRef>
+<attributeRef>CE68DD6E-D829-89BB-7A6D-0BA38F050AF9</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
